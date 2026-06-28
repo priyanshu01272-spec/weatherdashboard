@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+
+    <div class="hero-icon">🌍</div>
+    <h1>Weather Dashboard</h1>
+    <p class="hero-sub">Enter any city to get live temperature, humidity, wind speed, and conditions.</p>
+
+    {% if error %}
+    <div class="alert alert-error">
+        ⚠️ {{ error }}
+    </div>
+    {% endif %}
+
+    <form action="/weather" method="POST" class="search-form">
+        <div class="input-group">
+            <input
+                type="text"
+                name="city"
+                placeholder="Enter city name (e.g. Delhi, London, Tokyo)"
+                class="city-input"
+                autofocus
+                required
+            >
+            <button type="submit" class="search-btn">🔍 Search</button>
+        </div>
+    </form>
+
+    <div class="popular-cities">
+        <p class="popular-label">Quick search:</p>
+        <div class="city-tags">
+            <button class="city-tag" onclick="setCity('Delhi')">🇮🇳 Delhi</button>
+            <button class="city-tag" onclick="setCity('Mumbai')">🇮🇳 Mumbai</button>
+            <button class="city-tag" onclick="setCity('London')">🇬🇧 London</button>
+            <button class="city-tag" onclick="setCity('New York')">🇺🇸 New York</button>
+            <button class="city-tag" onclick="setCity('Tokyo')">🇯🇵 Tokyo</button>
+            <button class="city-tag" onclick="setCity('Paris')">🇫🇷 Paris</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function setCity(city) {
+        document.querySelector('.city-input').value = city;
+        document.querySelector('.search-form').submit();
+    }
+</script>
+{% endblock %}

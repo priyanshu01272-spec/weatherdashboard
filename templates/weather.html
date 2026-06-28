@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="weather-wrapper">
+
+    <div class="weather-card">
+
+        <!-- City Header -->
+        <div class="city-header">
+            <h1 class="city-name">{{ weather.city }}, {{ weather.country }}</h1>
+            <p class="condition-text">{{ weather.condition }}</p>
+        </div>
+
+        <!-- Main Temperature Block -->
+        <div class="temp-block">
+            <img
+                src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png"
+                alt="{{ weather.condition }}"
+                class="weather-icon"
+            >
+            <div class="temp-info">
+                <span class="temp-main">{{ weather.temperature }}°C</span>
+                <span class="feels-like">Feels like {{ weather.feels_like }}°C</span>
+                <span class="temp-range">↓ {{ weather.temp_min }}°C &nbsp; ↑ {{ weather.temp_max }}°C</span>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">💧</div>
+                <div class="stat-info">
+                    <span class="stat-value">{{ weather.humidity }}%</span>
+                    <span class="stat-label">Humidity</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💨</div>
+                <div class="stat-info">
+                    <span class="stat-value">{{ weather.wind_speed }} m/s</span>
+                    <span class="stat-label">Wind Speed</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🌡️</div>
+                <div class="stat-info">
+                    <span class="stat-value">{{ weather.pressure }} hPa</span>
+                    <span class="stat-label">Pressure</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🌤️</div>
+                <div class="stat-info">
+                    <span class="stat-value">{{ weather.main_weather }}</span>
+                    <span class="stat-label">Sky Condition</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Back Button -->
+        <a href="/" class="back-btn">← Search Another City</a>
+
+    </div>
+
+</div>
+{% endblock %}
