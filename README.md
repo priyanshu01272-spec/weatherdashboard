@@ -1,20 +1,64 @@
-# 🌤️ Weather Dashboard
+# 🌦️ Weather Dashboard
 
-A Flask web app that shows real-time weather data for any city using the OpenWeatherMap API.
-
-## Features
-- Search any city in the world
-- Shows: Temperature, Feels Like, Min/Max, Humidity, Wind Speed, Pressure, Sky Condition
-- Quick-search buttons for popular cities
-- Error handling for invalid city names
+A Flask-based web application that provides real-time weather information for any city using the OpenWeatherMap API. The application fetches live weather data and displays it through a clean, responsive user interface with proper error handling.
 
 ---
-## Installation
+
+## ✨ Features
+
+* 🌍 Search weather for any city worldwide
+* 🌡️ Displays current temperature and feels-like temperature
+* 📈 Shows minimum and maximum temperature
+* 💧 Displays humidity level
+* 💨 Shows wind speed
+* 🌤️ Displays current weather condition
+* ⚠️ Handles invalid city names gracefully
+* 🔐 Stores API keys securely using environment variables
+* 📱 Responsive and user-friendly interface
+
+---
+
+## 🛠️ Tech Stack
+
+* Python
+* Flask
+* HTML5
+* CSS3
+* Jinja2
+* Requests
+* Python-dotenv
+* OpenWeatherMap API
+
+---
+
+## 📁 Project Structure
+
+```text
+weather_dashboard/
+│
+├── static/
+│   └── style.css
+│
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   └── weather.html
+│
+├── .env
+├── .gitignore
+├── app.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🚀 Installation
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/weather_dashboard.git
+git clone https://github.com/priyanshu01272-spec/jobvacancyfinder.git
 cd weather_dashboard
 ```
 
@@ -27,11 +71,13 @@ python -m venv venv
 ### 3. Activate the virtual environment
 
 **Windows**
+
 ```bash
 venv\Scripts\activate
 ```
 
 **macOS / Linux**
+
 ```bash
 source venv/bin/activate
 ```
@@ -42,42 +88,55 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 5. Create a `.env` file
+---
+
+## 🔑 API Configuration
+
+1. Create a free account on OpenWeatherMap.
+2. Generate an API key from your dashboard.
+3. Create a `.env` file in the project root.
+
+Add the following:
 
 ```env
 OPENWEATHER_API_KEY=your_api_key_here
 ```
 
-### 6. Run the application
+---
+
+## ▶️ Run the Application
 
 ```bash
 python app.py
 ```
 
-### 7. Open in your browser
+Open your browser and visit:
 
 ```
 http://127.0.0.1:5000
 ```
 
+> If you have changed the Flask port (for example, to **5002**), open:
+>
+> ```
+> http://127.0.0.1:5002
+> ```
 
+---
 
+## 🚀 Future Improvements
 
-## Project Structure
-```
-weather_dashboard/
-├── app.py              # Flask routes + API logic
-├── .env                # API key (never commit this!)
-├── .gitignore
-├── requirements.txt
-├── templates/
-│   ├── base.html       # Shared layout (navbar, footer)
-│   ├── index.html      # Search form page
-│   └── weather.html    # Results page
-└── static/
-    └── style.css       # Styling
-```
+* 5-day weather forecast
+* Automatic location detection
+* Dark/Light mode
+* Recent search history
+* Temperature unit conversion (°C / °F)
+* Weather icons and animations
 
-## API Used
-[OpenWeatherMap Current Weather API](https://openweathermap.org/current)
-- Free tier: 60 calls/minute, 1,000,000 calls/month
+---
+
+## 👨‍💻 Author
+
+**Priyanshu Sharma**
+
+GitHub: https://github.com/priyanshu01272-spec
