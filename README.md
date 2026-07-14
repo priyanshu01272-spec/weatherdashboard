@@ -8,6 +8,7 @@ A Flask web app that shows real-time weather data for any city using the OpenWea
 - Quick-search buttons for popular cities
 - Error handling for invalid city names
 
+---
 ## Installation
 
 ### 1. Clone the repository
@@ -59,7 +60,8 @@ python app.py
 http://127.0.0.1:5000
 ```
 
----
+
+
 
 ## Project Structure
 ```
